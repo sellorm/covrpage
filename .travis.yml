@@ -2,5 +2,5 @@ language: r
 cache: packages
 
 after_success:
-  - Rscript -e 'devtools::install(keep_source=TRUE); l <- list.files(recursive = TRUE,full.names = TRUE); l; p <- parse(l[101]);p;utils::getParseData(p);'
+  - Rscript -e 'devtools::install(); l <- list.files(recursive = TRUE,full.names = TRUE); l; p <- parse(l[101],keep.source=TRUE);p;utils::getParseData(p);'
   
