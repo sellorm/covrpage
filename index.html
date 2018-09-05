@@ -90,69 +90,7 @@
 <p>Healthy R packages use <a href="https://github.com/r-lib/testthat">testthat</a> and <a href="https://github.com/r-lib/covr">covr</a> to develop stable packages.</p>
 <p>This package extends the information that is communicated with the potential user with a cover page for the tests in the form of summary tables of results from covr and testthat.</p>
 <p>The output is created in the <a href="tests" class="uri">tests</a> subdirectory as a <a href="tests/README.html">README.md</a> file so it will show up in Github browser page.</p>
-<details><summary><font color="red">Example Output</font> </summary>
-
-Coverage summary is created using the
-[covr](https://github.com/r-lib/covr) package.
-
-| Object                                             | Coverage (%) |
-| :------------------------------------------------- | :----------: |
-| covrpage                                           |    50.13     |
-| [R/covrpage\_snapshot.R](R/covrpage_snapshot.R) |     0.00     |
-| [R/map\_testthat.R](R/map_testthat.R)           |     0.00     |
-| [R/tencrypt.R](R/tencrypt.R)                    |     0.00     |
-| [R/use\_covrpage.R](R/use_covrpage.R)           |    63.64     |
-| [R/covrpage\_checks.R](R/covrpage_checks.R)     |    64.29     |
-| [R/covrpage.R](R/covrpage.R)                    |    65.79     |
-| [R/badge.R](R/badge.R)                          |    66.67     |
-| [R/testthat\_summary.R](R/testthat_summary.R)   |    93.55     |
-| [R/create\_chunks.R](R/create_chunks.R)         |    96.00     |
-
-<br>
-
-Unit Test summary is created using the
-[testthat](https://github.com/r-lib/testthat)
-package.
-
-|                     | file                                               | n |  time | error | failed | skipped | warning |
-| ------------------- | :------------------------------------------------- | -: | ----: | ----: | -----: | ------: | ------: |
-| test-check\_utils.R | [test-check\_utils.R](tests/testthat/test-check_utils.R) | 5 | 0.088 |     0 |      0 |       0 |       0 |
-| test-covrfuns.R     | [test-covrfuns.R](tests/testthat/test-covrfuns.R)        | 6 | 0.096 |     0 |      0 |       0 |       0 |
-| test-covrpage.R     | [test-covrpage.R](tests/testthat/test-covrpage.R)        | 1 | 3.669 |     0 |      0 |       0 |       0 |
-
-<details closed><summary> Show Detailed Test Results
-</summary>
-
-| file                                                   | context                                                 | test                           | status | n |  time |
-| :----------------------------------------------------- | :------------------------------------------------------ | :----------------------------- | :----- | -: | ----: |
-| [test-check\_utils.R](tests/testthat/test-check_utils.R#L4)  | check for tests                                         | tests are detected             | PASS   | 1 | 0.017 |
-| [test-check\_utils.R](tests/testthat/test-check_utils.R#L12) | check for packages                                      | packages are detected          | PASS   | 3 | 0.038 |
-| [test-check\_utils.R](tests/testthat/test-check_utils.R#L22) | use covrpage                                            | test use\_covrpage             | PASS   | 1 | 0.033 |
-| [test-covrfuns.R](tests/testthat/test-covrfuns.R#L5)         | check summary covr                                      | covr\_summary: standard input  | PASS   | 1 | 0.058 |
-| [test-covrfuns.R](tests/testthat/test-covrfuns.R#L9)         | check summary covr                                      | covr\_summary: empty input     | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](tests/testthat/test-covrfuns.R#L17)        | check summary output types                              | with data: short               | PASS   | 1 | 0.021 |
-| [test-covrfuns.R](tests/testthat/test-covrfuns.R#L21)        | check summary output types                              | with data: long                | PASS   | 1 | 0.014 |
-| [test-covrfuns.R](tests/testthat/test-covrfuns.R#L25)        | check summary output types                              | with data: no data             | PASS   | 1 | 0.001 |
-| [test-covrfuns.R](tests/testthat/test-covrfuns.R#L34)        | check covr to df                                        | covr object to df: empty input | PASS   | 1 | 0.001 |
-| [test-covrpage.R](tests/testthat/test-covrpage.R#L20)        | check against remote repo that main function is working | check on remote repo           | PASS   | 1 | 3.669 |
-
-</details><details><summary> Session Info </summary>
-
-| Field    | Value                               |
-| :------- | :---------------------------------- |
-| Version  | R version 3.5.0 (2018-04-23)        |
-| Platform | x86\_64-apple-darwin15.6.0 (64-bit) |
-| Running  | macOS High Sierra 10.13.5           |
-| Language | en\_US                              |
-| Timezone | America/New\_York                   |
-
-| Package  | Version |
-| :------- | :------ |
-| testthat | 2.0.0   |
-| covr     | 3.1.0   |
-| covrpage | 0.0.4   |
-
-</details></details><div id="examples-of-active-use-of-covrpage-in-other-repositories" class="section level2">
+<div id="examples-of-active-use-of-covrpage-in-other-repositories" class="section level2">
 <h2 class="hasAnchor">
 <a href="#examples-of-active-use-of-covrpage-in-other-repositories" class="anchor"></a>Examples of active use of {covrpage} in other repositories</h2>
 <ul>
@@ -209,7 +147,8 @@ covrpage::covrpage_snapshot(repo = 'user/repo')</a></code></pre>
 </ul>
 <p>To create the script for the badge to paste in the root README run the following, it will locate the <code>.git</code> and fill in the information it needs to build the uri.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/make_badge">make_badge</a></span>()</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">[<span class="dv">1</span>] <span class="st">"[![Covrpage Summary](https://img.shields.io/badge/covrpage-Last_Build_2018_09_04-brightgreen.svg)](https://github.com/yonicd/covrpage/tree/master/tests/README.md)"</span></a></code></pre></div>
+<a class="sourceLine" id="cb3-2" data-line-number="2">masking https<span class="op">:</span><span class="er">//</span>github.com<span class="op">/</span>yonicd<span class="op">/</span>covrpage<span class="op">/</span>tree<span class="op">/</span>master<span class="op">/</span>tests<span class="op">/</span>README.md with http<span class="op">:</span><span class="er">//</span>tinyurl.com<span class="op">/</span>ycoe59ud</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="st">"[![Covrpage Summary](https://img.shields.io/badge/covrpage-Initialized-orange.svg)](http://tinyurl.com/ycoe59ud)"</span></a></code></pre></div>
 </div>
 <div id="show-detailed-test-results" class="section level3">
 <h3 class="hasAnchor">
@@ -225,96 +164,70 @@ covrpage::covrpage_snapshot(repo = 'user/repo')</a></code></pre>
 <div id="travis" class="section level2">
 <h2 class="hasAnchor">
 <a href="#travis" class="anchor"></a>Travis</h2>
-<details><summary>Direct</summary>
-
-`{covrpage}` can be deployed in Travis much the way `{covr::covrall}` is deployed. The only difference is that `{covrpage}` will push back the updated `README.md` file to the originating repository so it can be updated as part of the custom integration routine. 
-
-The following `.travis.yml` is needed for the deployment:
-
-```yml
-language: R
-sudo: false
-cache: packages
-after_success:
-- Rscript -e 'covr::codecov()'
-- bash .travis/covrpage.sh
-r_github_packages: yonicd/covrpage
-env:
-  global:
-    secure: [Travis encrypted Github PAT]
-
-```
-
-covrpage adds one new line to the standard `{covr}` Travis YML:
-
-```yml
-- bash .travis/covrpage.sh
-```
-
-This file is created when running `covrpage::use_covrpage()` in the `.travis` subdirectory:
-
-```yml
-env:
-  global:
-    secure: IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...
-```
-
-To allow Travis push back into the originating repository, you will need to give it permission to do so by providing an encrypted [GitHub Personal Access Token](https://github.com/settings/tokens) (PAT). This is done using the Travis command line [function](https://docs.travis-ci.com/user/encryption-keys/).
-
-By default, the function assumes you have defined a system environment variable `GITHUB_PAT` and will use it to define a [Travis environment variable](https://docs.travis-ci.com/user/environment-variables/) as `GH_PAT`.
-
-  - `R` Environment Variable
-
-To define the Github PAT as an R environment variable:
-
-```r
-Sys.setenv(GITHUB_PAT='PAT FROM GITHUB')
-```
-
-  - Travis Environment Variable
-
-Run the following line in the terminal when you are in the root project directory (where the `.git` folder in located), the output should be appended directly to the `.travis.yml` file. Each time you run it a new `secure` line is added to the yml.
-
-```r
-travis encrypt GH_PAT = "[PAT FROM GITHUB]" --add
-```
-
-These two commands are combined into a utility function:
-
-```r
-covrpage::tencrypt(r_obj = Sys.getenv("GITHUB_PAT"),travis_env = "GH_PAT",add = TRUE)
-```
-
-</details><details><summary>Deploy + pkgdown</summary>
-
-You can also use [pkgdown](https://www.github.com/r-lib/pkgdown) to create a covrpage readme with Travis. Use the follow travis yml script
-
-```yml
-language: r
-cache: packages
-
-after_success:
-  - Rscript -e 'covr::codecov()'
-  - Rscript -e 'devtools::install(); covrpage::covrpage_travis()'
-  - Rscript -e 'pkgdown::build_site()'
-
-r_github_packages: 
-  - yonicd/covrpage
-  - r-lib/pkgdown #either put this here or in Suggests in the DESCRIPTION file
-
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: $GH_PAT
-  keep-history: true
-  local-dir: docs
-  on:
-    branch: master
-
-```
-
-</details><p>That’s it!</p>
+<div id="direct" class="section level3">
+<h3 class="hasAnchor">
+<a href="#direct" class="anchor"></a>Direct</h3>
+<p><code>{covrpage}</code> can be deployed in Travis much the way <code>{covr::covrall}</code> is deployed. The only difference is that <code>{covrpage}</code> will push back the updated <code>README.md</code> file to the originating repository so it can be updated as part of the custom integration routine.</p>
+<p>The following <code>.travis.yml</code> is needed for the deployment:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="fu">language:</span><span class="at"> R</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="fu">sudo:</span><span class="at"> false</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="fu">cache:</span><span class="at"> packages</span></a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="fu">after_success:</span></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">-</span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="kw">-</span> bash .travis/covrpage.sh</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="fu">r_github_packages:</span><span class="at"> yonicd/covrpage</span></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="fu">env:</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9">  <span class="fu">global:</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">    <span class="fu">secure:</span><span class="at"> </span><span class="kw">[</span>Travis encrypted Github PAT<span class="kw">]</span></a></code></pre></div>
+<p>covrpage adds one new line to the standard <code>{covr}</code> Travis YML:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">-</span> bash .travis/covrpage.sh</a></code></pre></div>
+<p>This file is created when running <code><a href="reference/use_covrpage.html">covrpage::use_covrpage()</a></code> in the <code>.travis</code> subdirectory:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="fu">env:</span></a>
+<a class="sourceLine" id="cb6-2" data-line-number="2">  <span class="fu">global:</span></a>
+<a class="sourceLine" id="cb6-3" data-line-number="3">    <span class="fu">secure:</span><span class="at"> IeWrPb9tC9oxkoceXs4NStZJFIJKtvi/qeErbv3OATeo+BylRwj9xzcmzQrV8ps...</span></a></code></pre></div>
+<p>To allow Travis push back into the originating repository, you will need to give it permission to do so by providing an encrypted <a href="https://github.com/settings/tokens">GitHub Personal Access Token</a> (PAT). This is done using the Travis command line <a href="https://docs.travis-ci.com/user/encryption-keys/">function</a>.</p>
+<p>By default, the function assumes you have defined a system environment variable <code>GITHUB_PAT</code> and will use it to define a <a href="https://docs.travis-ci.com/user/environment-variables/">Travis environment variable</a> as <code>GH_PAT</code>.</p>
+<ul>
+<li>
+<code>R</code> Environment Variable</li>
+</ul>
+<p>To define the Github PAT as an R environment variable:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">Sys.setenv</span>(<span class="dt">GITHUB_PAT=</span><span class="st">'PAT FROM GITHUB'</span>)</a></code></pre></div>
+<ul>
+<li>Travis Environment Variable</li>
+</ul>
+<p>Run the following line in the terminal when you are in the root project directory (where the <code>.git</code> folder in located), the output should be appended directly to the <code>.travis.yml</code> file. Each time you run it a new <code>secure</code> line is added to the yml.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">travis encrypt GH_PAT =<span class="st"> "[PAT FROM GITHUB]"</span> <span class="op">--</span>add</a></code></pre></div>
+<p>These two commands are combined into a utility function:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1">covrpage<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/covrpage/topics/tencrypt">tencrypt</a></span>(<span class="dt">r_obj =</span> <span class="kw">Sys.getenv</span>(<span class="st">"GITHUB_PAT"</span>),<span class="dt">travis_env =</span> <span class="st">"GH_PAT"</span>,<span class="dt">add =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+</div>
+<div id="deploy-pkgdown" class="section level3">
+<h3 class="hasAnchor">
+<a href="#deploy-pkgdown" class="anchor"></a>Deploy + pkgdown</h3>
+<p>You can also use <a href="https://www.github.com/r-lib/pkgdown">pkgdown</a> to create a covrpage readme with Travis. Use the follow travis yml script</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yml"><code class="sourceCode yaml"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="fu">language:</span><span class="at"> r</span></a>
+<a class="sourceLine" id="cb10-2" data-line-number="2"><span class="fu">cache:</span><span class="at"> packages</span></a>
+<a class="sourceLine" id="cb10-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb10-4" data-line-number="4"><span class="fu">after_success:</span></a>
+<a class="sourceLine" id="cb10-5" data-line-number="5">  <span class="kw">-</span> <span class="fu">Rscript -e 'covr:</span><span class="at">:codecov()'</span></a>
+<a class="sourceLine" id="cb10-6" data-line-number="6">  <span class="kw">-</span> <span class="fu">Rscript -e 'devtools:</span><span class="at">:install(); covrpage::covrpage_travis()'</span></a>
+<a class="sourceLine" id="cb10-7" data-line-number="7">  <span class="kw">-</span> <span class="fu">Rscript -e 'pkgdown:</span><span class="at">:build_site()'</span></a>
+<a class="sourceLine" id="cb10-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb10-9" data-line-number="9"><span class="fu">r_github_packages:</span><span class="at"> </span></a>
+<a class="sourceLine" id="cb10-10" data-line-number="10">  <span class="kw">-</span> yonicd/covrpage</a>
+<a class="sourceLine" id="cb10-11" data-line-number="11">  <span class="kw">-</span> r-lib/pkgdown <span class="co">#either put this here or in Suggests in the DESCRIPTION file</span></a>
+<a class="sourceLine" id="cb10-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb10-13" data-line-number="13"><span class="fu">deploy:</span></a>
+<a class="sourceLine" id="cb10-14" data-line-number="14">  <span class="fu">provider:</span><span class="at"> pages</span></a>
+<a class="sourceLine" id="cb10-15" data-line-number="15">  <span class="fu">skip-cleanup:</span><span class="at"> true</span></a>
+<a class="sourceLine" id="cb10-16" data-line-number="16">  <span class="fu">github-token:</span><span class="at"> $GH_PAT</span></a>
+<a class="sourceLine" id="cb10-17" data-line-number="17">  <span class="fu">keep-history:</span><span class="at"> true</span></a>
+<a class="sourceLine" id="cb10-18" data-line-number="18">  <span class="fu">local-dir:</span><span class="at"> docs</span></a>
+<a class="sourceLine" id="cb10-19" data-line-number="19">  <span class="fu">on:</span></a>
+<a class="sourceLine" id="cb10-20" data-line-number="20">    <span class="fu">branch:</span><span class="at"> master</span></a></code></pre></div>
+<p>That’s it!</p>
 <p>Any questions/comments are always welcome in the <a href="https://github.com/yonicd/covrpage/issues">issues</a> section.</p>
+</div>
 </div>
 </div>
 
