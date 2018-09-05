@@ -3,6 +3,6 @@ cache: packages
 
 after_success:
   - Rscript -e 'covr::codecov()'
-  - Rscript -e 'devtools::install(); list.files(recursive = TRUE,full.names = TRUE); readLines(list.files(recursive = TRUE,full.names = TRUE)[101])'
+  - Rscript -e 'devtools::install(); list.files(recursive = TRUE,full.names = TRUE); parse(list.files(recursive = TRUE,full.names = TRUE)[101])'
 
 #utils::getParseData(parse(list.files(recursive = TRUE,full.names = TRUE)[101]),includeText = TRUE); covrpage::covrpage(update_badge = FALSE,vignette = TRUE)
