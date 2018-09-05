@@ -91,6 +91,9 @@ nest_expect <- function(x) {
 map_test <- function(path) {
   x <- utils::getParseData(parse(path), includeText = TRUE)
 
+  if(is.null(x))
+    return(NULL)
+  
   ret <- lapply(nest_test(x), function(xx) {
     ret_ <- lapply(
       nest_test(xx, token_text = "^test_that$|^describe$"),
