@@ -1,7 +1,7 @@
 #!/bin/bash
   
 set -x
-if [ $TRAVIS_BRANCH == "master" ] ; then
+if [ $TRAVIS_BRANCH == "test_travis_deploy" ] ; then
 
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
@@ -17,5 +17,5 @@ git remote add deploy https://yonis:${GH_KEY}@github.com/yonicd/covrpage.git
 git push -f deploy test -v
 
 else
-echo "Not deploying, since this branch is not master."
+echo "Not deploying, since this branch is not test_travis_deploy."
 fi
