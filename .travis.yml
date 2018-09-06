@@ -1,6 +1,7 @@
 language: r
 cache: packages
-
-after_success:
-  - Rscript -e 'devtools::install(); l <- list.files(recursive = TRUE,full.names = TRUE); l; p <- parse(l[101],keep.source=TRUE);p;utils::getParseData(p);'
-  
+after_sucess:
+- bash .travis/covrpage.sh
+env:
+  global:
+    secure: LbvZEK2wBQoPXN+IPcoIAFrCtDIgiucELEE8q356pBMHSQyRB40MS4YcTeJEIgG7SRYilI4t8MYIKHxRCpYBvG1s7t+A87vqlcRLSxty1z02uaQQV5sAO4/2Tl/yc0m7X7Nr2macD/Xslc7Qbts3SZXq4Qy89LnKaR67CHnbs6RXlRdhKgcupKKUS1Qejb2T3hx7x5v24v8RS3H/qvfedrq0hA5/mOjpKN9+f7iz2DW6z/RES0XK1bwNqwckUXQ4rgbaqSOyqhz3N0dspwJsMAZo5Uh7WfrNJt1U3yy243qga7nllAQEEKppfSgIWRttNSBj5l9/CnJO0H5XrMdwRH46ViZXXXNp0xoW6z0MV+h5dgfWaHOfbtY9u8KC+SHWjNhReWHR4+xSiDaAUnlJIPyMafpfWRkOqpLsg4B/DVQV0QhlAEYlFwcfPYMsAplLgk4eL9zpJoKpt+0mjasUuKC2OuyK7u3qI1z3vl2HulJdyJzIslzBCggud0Ftredvz0/UEVaHmfRqmSWaWSiY1aCijX1N+qF4mrUiNpbH2Rdub7gb4PcpyIlBLmmM371gRevoPXjOG1qHHSdS7Ft8WcV1T1caelMtDRayCKmIQJ9tAVP1tH0gzo3uBuRfLUzzFhEU0RyfIa5U/9n1IKk/r2+sPTlboJPVTq7aLSJ11OU=
